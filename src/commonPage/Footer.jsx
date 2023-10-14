@@ -11,10 +11,8 @@ const Footer = () => {
                     <div className=''>
                         <h3 className='text-xl font-semibold mb-2'>Address</h3>
                         <ul>
-                            <li>
-                                Level-4, 334, Awala Centre, Banani, Dhaka
-                              <li>Helpline: 01322338182 , 016212901105</li>
-                            </li>
+                            <li>Level-4, 334, Awala Centre, Banani, Dhaka</li>
+                            <li>Helpline: 01322338182 , 016212901105</li>
                             <li>Support: bangladeshicuisine-chef@provider.com</li>
                         </ul>
 
