@@ -7,7 +7,7 @@ const Footer = () => {
     return (
         <div >
             <footer className='px-4 bg-slate-700 divide-y w-full fixed bottom-0 left-0'>
-                <div className='lg:flex justify-around text-white p-2'>
+                <div className='lg:flex justify-around text-white p-2 space-y-5 lg:space-y-0'>
                     <div className=''>
                         <h3 className='text-xl font-semibold mb-2'>Address</h3>
                         <ul>

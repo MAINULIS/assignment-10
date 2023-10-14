@@ -1,17 +1,17 @@
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { HiBarsArrowDown, HiXMark} from "react-icons/hi2";
+import { HiBarsArrowDown, HiXMark } from "react-icons/hi2";
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     return (
-             
+
         <div className='bg-slate-950 px-4 mx-auto py-6'>
             <div className=' flex items-center justify-between'>
                 {/* company name */}
                 <div className='ml-3 font-bold tracking-wide text-zinc-700 text-xl'>
                     <Link to="/" className='inline-flex'>
-                    Chefs Of Bangladeshi Cuisine 
+                        Chefs Of Bangladeshi Cuisine
                     </Link>
                 </div>
 
@@ -30,9 +30,14 @@ const Header = () => {
                             >Blog</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/profile"
-                                className={({ isActive }) => (isActive ? 'active' : 'default')}
-                            >Profile</NavLink>
+                            <img
+                                data-te-toggle="tooltip"
+                                title="Hi! I'm .."
+                                src="https://tecdn.b-cdn.net/img/new/avatars/2.webp"
+                                className="w-12 rounded-full"
+                                alt="Avatar"
+                            />
+
                         </li>
                     </ul>
                 </div>
@@ -53,7 +58,7 @@ const Header = () => {
                                         <Link to='/' className='inline-flex items-center'>
 
                                             <span className=' font-bold tracking-wide text-zinc-700 text-xl'>
-                                            Chefs Of Bangladeshi Cuisine  
+                                                Chefs Of Bangladeshi Cuisine
                                             </span>
                                         </Link>
                                     </div>
@@ -76,21 +81,20 @@ const Header = () => {
                                         </li>
                                         <li>
                                             <NavLink
-                                            to='/blog'
-                                            className={({ isActive }) => (isActive ? 'active' : 'default')}
+                                                to='/blog'
+                                                className={({ isActive }) => (isActive ? 'active' : 'default')}
                                             >
-                                            Blog
+                                                Blog
                                             </NavLink>
                                         </li>
                                         <li>
-                                            <NavLink
-                                                to='/profile'
-                                                className={({ isActive }) => (isActive ? 'active' : 'default')}
-                                            >
-                                                Profile
-                                            </NavLink>
+                                            <img
+                                                src="https://tecdn.b-cdn.net/img/new/avatars/2.webp"
+                                                className="w-12 rounded-full"
+                                                alt="Avatar"
+                                            />
                                         </li>
-                                    
+
                                     </ul>
                                 </nav>
                             </div>
@@ -99,7 +103,7 @@ const Header = () => {
                 </div>
             </div>
         </div>
-        
+
     );
 };
 
