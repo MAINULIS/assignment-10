@@ -30,6 +30,11 @@ const Header = () => {
                             >Blog</NavLink>
                         </li>
                         <li>
+                            <NavLink to="/login"
+                                className={({ isActive }) => (isActive ? 'active' : 'default')}
+                            >Login</NavLink>
+                        </li>
+                        <li>
                             <img
                                 data-te-toggle="tooltip"
                                 title="Hi! I'm .."
@@ -85,6 +90,14 @@ const Header = () => {
                                                 className={({ isActive }) => (isActive ? 'active' : 'default')}
                                             >
                                                 Blog
+                                            </NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink
+                                                to='/login'
+                                                className={({ isActive }) => (isActive ? 'active' : 'default')}
+                                            >
+                                                Login
                                             </NavLink>
                                         </li>
                                         <li>
