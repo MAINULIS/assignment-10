@@ -24,11 +24,11 @@ const Register = () => {
         console.log(name, email, photo, password, confirmPass);
 
         if(password !== confirmPass){
-            setError('Password did not match')
+            setError('Password did not match.Please try again')
             return 
         }
         else if(!/(?=.*[!@#$%&*])/.test(password)){
-            setError('Use at least a special character in your password');
+            setError('Use at least a special character(!,@,$,%,& or *) in your password');
             return;
         }
         else if(password.length < 6){
