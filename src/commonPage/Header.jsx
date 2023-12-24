@@ -1,9 +1,21 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { HiBarsArrowDown, HiXMark } from "react-icons/hi2";
+import { AuthContext } from '../provider/AuthProvider';
 
 const Header = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const { logOut, user } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => {
+                console.log(error.message);
+            })
+    }
+
     return (
 
         <div className='bg-slate-950 px-4 mx-auto py-6'>
@@ -29,15 +41,23 @@ const Header = () => {
                                 className={({ isActive }) => (isActive ? 'active' : 'default')}
                             >Blog</NavLink>
                         </li>
-                        <li>
-                            <NavLink to="/login"
-                                className={({ isActive }) => (isActive ? 'active' : 'default')}
-                            >Login</NavLink>
-                        </li>
+                        {
+                            user ?
+                                <li>
+                                    <NavLink onClick={handleLogOut}
+                                        className={({ isActive }) => (isActive ? 'text-green-700' : 'active')}
+                                    >LogOut</NavLink>
+                                </li> :
+                                <li>
+                                    <NavLink to="/login"
+                                        className={({ isActive }) => (isActive ? 'active' : 'default')}
+                                    >Login</NavLink>
+                                </li>
+                        }
                         <li>
                             <img
                                 data-te-toggle="tooltip"
-                                title="Hi! I'm .."
+                                title="hi! I'm..."
                                 src="https://tecdn.b-cdn.net/img/new/avatars/2.webp"
                                 className="w-12 rounded-full"
                                 alt="Avatar"
@@ -92,14 +112,19 @@ const Header = () => {
                                                 Blog
                                             </NavLink>
                                         </li>
-                                        <li>
-                                            <NavLink
-                                                to='/login'
-                                                className={({ isActive }) => (isActive ? 'active' : 'default')}
-                                            >
-                                                Login
-                                            </NavLink>
-                                        </li>
+                                        {
+                                            user ?
+                                                <li>
+                                                    <NavLink onClick={handleLogOut}
+                                                        className={({ isActive }) => (isActive ? 'text-green-700' : 'active')}
+                                                    >LogOut</NavLink>
+                                                </li> :
+                                                <li>
+                                                    <NavLink to="/login"
+                                                        className={({ isActive }) => (isActive ? 'active' : 'default')}
+                                                    >Login</NavLink>
+                                                </li>
+                                        }
                                         <li>
                                             <img
                                                 src="https://tecdn.b-cdn.net/img/new/avatars/2.webp"
