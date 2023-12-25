@@ -38,7 +38,7 @@ const AuthProvider = ({ children }) => {
         setLoading(true);
         return signInWithPopup(auth, githubProvider);
     }
-    /* 5. Reset Password */
+    /* 6. Reset Password */
     const resetPassword = (email) => {
         setLoading(true);
         return sendPasswordResetEmail(auth, email);
@@ -64,7 +64,7 @@ const AuthProvider = ({ children }) => {
         logOut,
         sigInWithGoogle,
         loginWithGithub,
-        resetPassword
+        resetPassword,
     }
     return (
         <AuthContext.Provider value={info}>
