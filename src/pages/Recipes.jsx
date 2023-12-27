@@ -35,7 +35,9 @@ const Recipes = () => {
             </div>
             {/* recipe section */}
             <section className='mt-16'>
+                <h2 className='text-3xl lg:text-4xl font-semibold lg:bold mb-10 text-center text-lime-800'>{chefName}'s some special recipes:</h2>
                 <div className='grid lg:grid-cols-2 gap-6'>
+
                     {/* 1 */}
                     <div className='lg:flex gap-2 lg:gap-4 justify-center bg-gray-50'>
                         <div>
