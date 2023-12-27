@@ -24,7 +24,7 @@ const Home = () => {
             </main>
             {/* extra section */}
             <section>
-                <div className='lg:flex flex-row-reverse m-16 p-4 justify-center gap-4'>
+                <div className='lg:flex flex-row-reverse lg:m-16 p-4 justify-center gap-4'>
                     <div className='mt-10'>
                         <p className='text-red-500 font-serif'>WHY WE ARE</p>
                         <h2 className='text-2xl lg:text-3xl font-semibold'> Thousands flavors in one place.</h2>
@@ -41,7 +41,7 @@ const Home = () => {
                 </div>
             </section>
             {/* 6 cards section */}
-            <section className='m-16 p-4'>
+            <section className='lg:m-16 p-4'>
                 <h2 className='lg:text-3xl text-2xl font-semibold font-sans text-center mb-10 pb-4'>Get familiar with our world class <span className='font-serif'>Chefs</span>.And Explore them</h2>
             <ChefCards></ChefCards>
             </section>
