@@ -6,7 +6,7 @@ import { AuthContext } from '../provider/AuthProvider';
 const Header = () => {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const { logOut ,user} = useContext(AuthContext);
+    const { logOut, user } = useContext(AuthContext);
 
     const handleLogOut = () => {
         logOut()
@@ -42,6 +42,14 @@ const Header = () => {
                             >Blog</NavLink>
                         </li>
                         {
+                            user && <li>
+                                <NavLink to="/profile"
+                                    className={({ isActive }) => (isActive ? 'active' : 'default')}
+                                >Profile</NavLink>
+                            </li>
+                        }
+
+                        {
                             user ?
                                 <li>
                                     <NavLink onClick={handleLogOut}
@@ -55,13 +63,15 @@ const Header = () => {
                                 </li>
                         }
                         <li>
-                            <img
-                                data-te-toggle="tooltip"
-                                title={`Hi! I'm ${user?.displayName}`}
-                                src="https://tecdn.b-cdn.net/img/new/avatars/2.webp"
-                                className="w-12 rounded-full"
-                                alt="Avatar"
-                            />
+                            <Link to="/profile">
+                                <img
+                                    data-te-toggle="tooltip"
+                                    title={`Hi! I'm ${user?.displayName}`}
+                                    src={user?.photoURL || "https://tecdn.b-cdn.net/img/new/avatars/2.webp"}
+                                    className="w-12 rounded-full"
+                                    alt="Avatar"
+                                />
+                            </Link>
 
                         </li>
                     </ul>
@@ -112,6 +122,15 @@ const Header = () => {
                                                 Blog
                                             </NavLink>
                                         </li>
+                                        
+                                        {
+                                            user && <li>
+                                                <NavLink to="/profile"
+                                                    className={({ isActive }) => (isActive ? 'active' : 'default')}
+                                                >Profile</NavLink>
+                                            </li>
+                                        }
+
                                         {
                                             user ?
                                                 <li>
@@ -126,11 +145,15 @@ const Header = () => {
                                                 </li>
                                         }
                                         <li>
-                                            <img
-                                                src="https://tecdn.b-cdn.net/img/new/avatars/2.webp"
-                                                className="w-12 rounded-full"
-                                                alt="Avatar"
-                                            />
+                                            <Link to="/profile">
+                                                <img
+                                                    data-te-toggle="tooltip"
+                                                    title={`Hi! I'm ${user?.displayName}`}
+                                                    src={user?.photoURL || "https://tecdn.b-cdn.net/img/new/avatars/2.webp"}
+                                                    className="w-12 rounded-full"
+                                                    alt="Avatar"
+                                                />
+                                            </Link>
                                         </li>
 
                                     </ul>

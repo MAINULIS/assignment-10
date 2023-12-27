@@ -1,5 +1,6 @@
 import React from 'react';
 import ChefCards from './ChefCards';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
 
@@ -15,9 +16,10 @@ const Home = () => {
                             Bangladeshi traditional and modern food recipes are here.
                         </p>
                         <div className="mt-4">
-                            <button className="px-6 py-2 text-center text-white bg-indigo-600 rounded-md shadow-md">
-                                Get started
-                            </button>
+                            <Link to='/blog'>
+                            <button  className="px-6 py-2 text-center text-white bg-indigo-600 rounded-md shadow-md">
+                                About Us
+                            </button></Link>
                         </div>
                     </div>
                 </div>
