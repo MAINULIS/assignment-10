@@ -15,7 +15,7 @@ const ChefInfo = ({chef}) => {
                         <p className='inline-grid'><FaRegThumbsUp className='h-6 w-6 text-blue-700 hover:hue-rotate-30 hover:translate-y-1' /> {likes}</p>
                         </div>
                        <Link to={`/recipes/${_id}`}>
-                       <button to='/blog' className='inline-flex items-center h-12 px-6 font-semibold mt-4 rounded hover:text-neutral-800 bg-stone-500 hover:bg-stone-600 text-white transition-colors duration-200'>View Recipes</button>
+                       <button to='/blog' className='btn-recipe'>View Recipes</button>
                        </Link>
                     </div>
                 </div>

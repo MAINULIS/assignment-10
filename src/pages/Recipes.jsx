@@ -1,17 +1,29 @@
-import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useLoaderData } from 'react-router-dom';
 import { FaRegThumbsUp } from "react-icons/fa6";
+import { Rating } from '@smastrom/react-rating'
+import '@smastrom/react-rating/style.css';
+import { HiHeart } from "react-icons/hi";
+import toast from 'react-hot-toast';
+
+
 
 const Recipes = () => {
     const recipeData = useLoaderData();
-    const { chefName, picture, shortBio, yearsOfExperience, numberOfRecipes, likes, recipes } = recipeData
+    const [button, setButton] = useState(false);
+    const [button2, setButton2] = useState(false);
+    const [button3, setButton3] = useState(false);
+    const { chefName, picture, shortBio, yearsOfExperience, numberOfRecipes, likes, recipes } = recipeData;
+
+    const notify = () => toast('This recipe is added to your favorite list.');
+
     return (
         <div className='lg:m-16 p-4'>
             <div className='lg:flex flex-row-reverse gap-6 justify-center items-center'>
                 <div>
                     <img src={picture} alt="" className='object-cover w-full h-72 ' />
                 </div>
-                
+
                 <div className='bg-stone-100 px-6 py-8'>
                     <h2 className='text-2xl font-semibold'>{chefName}</h2>
                     <p className='text-xl text-neutral-800'><span className='font-semibold'>Description: </span>{shortBio}</p>
@@ -33,7 +45,18 @@ const Recipes = () => {
                             <h3 className='text-2xl font-medium lg:font-semibold text-neutral-700'> <span className='font-serif'>Recipe Name: </span>{recipes[0]?.recipeName}</h3>
                             <p className='text-neutral-600 text-xl'><span className='font-medium'>Ingredients: </span>{recipes[0]?.ingredients}</p>
                             <p className='text-neutral-600 text-xl'><span className='font-medium'>Method of Cooking: </span>{recipes[0]?.cookingMethod}</p>
-                            <p className='text-xl'><span className='font-medium'>Ratings: </span>{recipes[0]?.rating}</p>
+                            <div className='text-xl inline-flex'>
+                                <p>
+                                    <Rating className='h-10' value={recipes[0]?.rating} readOnly />
+                                </p>
+                                <p className='pt-2'>
+                                    {recipes[0]?.rating}
+                                </p>
+                            </div>
+                            <div onClick={notify}>
+                                <button
+                                    onClick={() => { setButton(true) }} disabled={button} className='inline-flex'> Add To:<HiHeart className='w-8 h-7 text-red-600' /></button>
+                            </div>
 
                         </div>
                     </div>
@@ -46,7 +69,19 @@ const Recipes = () => {
                             <h3 className='text-2xl font-medium lg:font-semibold text-neutral-700'> <span className='font-serif'>Recipe Name: </span>{recipes[1]?.recipeName}</h3>
                             <p className='text-neutral-600 text-xl'><span className='font-medium'>Ingredients: </span>{recipes[1]?.ingredients}</p>
                             <p className='text-neutral-600 text-xl'><span className='font-medium'>Method of Cooking: </span>{recipes[1]?.cookingMethod}</p>
-                            <p className='text-xl'><span className='font-medium '>Ratings: </span >{recipes[1]?.rating}</p>
+                            <div className='text-xl inline-flex'>
+                                <p>
+                                    <Rating className='h-10' value={recipes[0]?.rating} readOnly />
+                                </p>
+                                <p className='pt-2'>
+                                    {recipes[0]?.rating}
+                                </p>
+
+                            </div>
+                            <div onClick={notify}>
+                                <button
+                                    onClick={() => { setButton2(true) }} disabled={button2} className='inline-flex'> Add To:<HiHeart className='w-8 h-7 text-red-600' /></button>
+                            </div>
 
                         </div>
                     </div>
@@ -59,13 +94,28 @@ const Recipes = () => {
                             <h3 className='text-2xl font-medium lg:font-semibold text-neutral-700'> <span className='font-serif'>Recipe Name: </span>{recipes[2]?.recipeName}</h3>
                             <p className='text-neutral-600 text-xl'><span className='font-medium'>Ingredients: </span>{recipes[2]?.ingredients}</p>
                             <p className='text-neutral-600 text-xl'><span className='font-medium'>Method of Cooking: </span>{recipes[2]?.cookingMethod}</p>
-                            <p className='text-xl'><span className='font-medium '>Ratings: </span>{recipes[2]?.rating}</p>
-
+                            <div className='text-xl inline-flex'>
+                                <p>
+                                    <Rating className='h-10' value={recipes[0]?.rating} readOnly />
+                                </p>
+                                <p className='pt-2'>
+                                    {recipes[0]?.rating}
+                                </p>
+                            </div>
+                            <div onClick={notify}>
+                                <button
+                                    onClick={() => { setButton3(true) }} disabled={button3} className='inline-flex'> Add To:<HiHeart className='w-8 h-7 text-red-600' /></button>
+                            </div>
                         </div>
                     </div>
 
                 </div>
             </section>
+            <div className='flex justify-center mt-12'>
+                <Link to="/">
+                    <button className='btn'>Back to Home page</button>
+                </Link>
+            </div>
         </div>
     );
 };
