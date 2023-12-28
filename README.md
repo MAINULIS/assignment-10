@@ -6,3 +6,5 @@
 * This project's Authentication is done by **firebase**. Here a user can login with email-password, via gmail and via github.
 * In this project data is loaded from server API.
 * In this project images are used from freepik.
+
+* verver site link:https://assignment-10-server-5r67c0vbb-mainul-islams-projects.vercel.app
