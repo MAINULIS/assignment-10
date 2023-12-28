@@ -7,4 +7,4 @@
 * In this project data is loaded from server API.
 * In this project images are used from freepik.
 
-* verver site link:https://assignment-10-server-5r67c0vbb-mainul-islams-projects.vercel.app
+* server site link:https://assignment-10-server-5r67c0vbb-mainul-islams-projects.vercel.app
